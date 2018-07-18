@@ -67,7 +67,7 @@ func (d *WriteData) LogEntryList(projectID string) ([]*SDK.LogEntry, error) {
 		ent.Resource = d.Resource.toMonitorResource()
 	}
 	if !d.Timestamp.IsZero() {
-		ent.Timestamp = d.Timestamp.Format(time.RFC3339)
+		ent.Timestamp = d.Timestamp.Format(time.RFC3339Nano)
 	}
 
 	return []*SDK.LogEntry{ent}, nil
